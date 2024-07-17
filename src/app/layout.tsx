@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import {config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+import "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/react-fontawesome"
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
