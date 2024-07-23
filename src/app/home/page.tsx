@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../components/navbar';
-import Indices from '../components/indices';
-import ImageSat from '../components/imageSat';
-import SuperficieTotale from '../components/superficieTotale';
-import ListParcelles from '../components/listParcelles';
-import ChoixSaison from '../components/choixSaison';
-import FiltreParcelles from '../components/filtreParcelles';
+import Navbar from '../components/compo-home/navbar';
+import Indices from '../components/compo-home/indices';
+import ImageSat from '../components/compo-home/imageSat';
+import SuperficieTotale from '../components/compo-home/superficieTotale';
+import ListParcelles from '../components/compo-home/listParcelles';
+import ChoixSaison from '../components/compo-home/choixSaison';
+import FiltreParcelles from '../components/compo-home/filtreParcelles';
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
-import satPic from '../../../../public/fertisat.jpg'
+import satPic from '../../../../public/images-home/fertisat.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import InfoHome from './infoHome';

@@ -2,6 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleUser, faBell, faCog, faBars ,faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { width } from '@fortawesome/free-solid-svg-icons/fa0';
+import Image from 'next/image'
+import logo from '../../../../public/images-home/lokropserve.jpg';
 
 
 type Props = {}
@@ -11,7 +13,11 @@ export default function navbar({}: Props) {
             <div className='flex sticky top-1 flex-row w-full h-10 md:h-16  mx-2 items-center z-50'>
               <div className='navbar-start items-center h-full md:w-3/12'>
                 <div className='flex flex-row mr-1 w-2/3 h-full  items-end'>
-                   <img src="/lokropserve.jpg" alt="Shoes" className="h-full mr-1" />
+                   <Image
+                    src={logo}
+                    alt="logo"
+                    className='h-full mr-1'
+                  />
                 </div>
               </div>
               <div className="navbar-center md:w-5/12">
