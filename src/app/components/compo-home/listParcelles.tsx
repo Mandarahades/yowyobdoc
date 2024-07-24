@@ -32,6 +32,8 @@ const MenuDeroulant = () => {
                     <ul className="py-1">
                         <li><a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Modifier</a></li>
                         <li><a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Supprimer</a></li>
+                        <li><a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Calculer N</a></li>
+                        <li><a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-200">Calculer PK</a></li>
                         {/* Ajoutez d'autres options de menu ici */}
                     </ul>
                 </div>

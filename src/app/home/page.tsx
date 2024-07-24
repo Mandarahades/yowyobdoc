@@ -19,7 +19,7 @@ export default function Page({}: Props) {
         <Navbar />
         <div className='flex flex-col md:flex-row my-3 overflow-hidden'>
             <div className='flex  flex-col md:flex-row  md:w-8/12 lg:w-9/12 xl:w-9/12 md:left-0 top-0 md:h-full '>
-              {/* <Indices /> */}
+              <Indices />
               <ImageSat />
             </div>  
             <div className='flex flex-col md:mx-1 md:sticky md:w-4/12 lg:w-3/12 xl:w-3/12 md:right-0 md:bottom-0  md:scroll-my-1 md:top-0 md:h-screen mt-2 p-2'>
