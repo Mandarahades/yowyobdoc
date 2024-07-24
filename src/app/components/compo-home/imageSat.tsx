@@ -20,11 +20,11 @@ export default function ImageSat({}: Props) {
         />
       </div>
       
-      <div className='absolute w-full m-1 px-2 self-center lg:block bg-gray-900 outline-none text-white border rounded-3xl top-0  md:px-2'>
+      <div className='absolute w-full m-1 px-2 self-center lg:block bg-gray-900 opacity-60 outline-none text-white border rounded-3xl top-0  md:px-2'>
         <InfoHome />
       </div>
       <div className='absolute  justify-end  self-end text-center w-full bottom-1 right-1'>
-        <button className="btn btn-outline absolute bottom-2  btn-sm btn-active btn-success right-1">Ajouter une Parcelle</button>
+        <button className="btn btn-outline absolute bottom-2  btn-sm btn-active btn-success opacity-80 right-1">Ajouter une Parcelle</button>
       </div>
     </div>
   );
