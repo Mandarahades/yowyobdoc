@@ -21,16 +21,16 @@ export default function navbar({}: Props) {
                 </div>
               </div>
               <div className="navbar-center md:w-5/12">
-                <div className="flex ">
+                <label className="flex items-center gap-2  input input-bordered">
                   <input
                     type="text"
-                    placeholder="Rechercher une localisation"
-                    className="flex-row px-2 py-1 text-black  w-full rounded-3xl hidden md:block"
+                    placeholder="Rechercher une localité"
+                    className="flex-row text-black  w-full rounded-3xl hidden md:block"
                   />
                   <div className="pl-2">
                     <FontAwesomeIcon icon={faSearch} height="lg" width={24} className="text-gray-500" />
                   </div>
-                </div>
+                </label>
               </div>
               <div className='flex flex-row navbar-end md:w-4/12 justify-end items-end right-1'>
                 <div className='w-full flex flex-row  justify-end items-end flex-shrink-1 '>
