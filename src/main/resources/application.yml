@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: payment-service
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:development}
+
+api:
+  version: v1
+  context: /api
+  
+logging:
+  level:
+    org.springframework: error
+    org.springframework.security: debug
+    com.yowyob.identity: DEBUG
+
+
+client:
+  super:
+    id: cffe3990-6f0e-11e8-b750-4d8614c940ff
+    secret: $2a$12$.5qlSA.5Gjp9.TRlEflnXukLlYUz/eNRhLgFKubk6PIoL8GM7GzLu
+    scope: trust, system
+    grant-types: password, refresh_token
+
+openapi:
+  service:
+   title: Payment Service
+   version: 1.0.0
+   description: Payment Service
+   url: http://localhost:8080
