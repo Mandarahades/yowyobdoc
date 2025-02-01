@@ -67,7 +67,7 @@ const ApiDocumentation = () => {
     <div className="bg-gray-100 min-h-screen py-10 px-6">
       <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-lg">
         <header className="bg-blue-600 text-white px-6 py-4 rounded-t-lg">
-          <h1 className="text-3xl font-bold">Documentation de l API de Paiement</h1>
+          <h1 className="text-3xl font-bold">Documentation de l&apos;API de Paiement</h1>
           <p className="text-sm mt-1">
             Gérez les paiements via deux principales routes : demander un paiement et vérifier le statut du paiement.
           </p>
@@ -86,7 +86,7 @@ const ApiDocumentation = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-semibold text-gray-800">Authentification</h2>
             <p className="text-gray-700 mt-2">
-              Toutes les requêtes nécessitent une clé API (<code>api_key</code>) incluse dans l URL. Assurez-vous de protéger
+              Toutes les requêtes nécessitent une clé API (<code>api_key</code>) incluse dans l&apos;URL. Assurez-vous de protéger
               votre clé API pour éviter tout usage non autorisé.
             </p>
           </section>
