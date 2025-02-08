@@ -65,168 +65,135 @@ const ApiDocumentation = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen py-10 px-6">
-      <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-lg">
-        <header className="bg-blue-600 text-white px-6 py-4 rounded-t-lg">
-          <h1 className="text-3xl font-bold">Documentation de l&apos;API de Paiement</h1>
-          <p className="text-sm mt-1">
-            Gérez les paiements via deux principales routes : demander un paiement et vérifier le statut du paiement.
-          </p>
-        </header>
+    <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-lg">
+      
+      {/* Header */}
+      <header className="bg-green-600 text-white px-6 py-4 rounded-t-lg">
+        <h1 className="text-3xl font-bold">Documentation de l'API</h1>
+        <p className="text-sm mt-1">Service de gestion des utilisateurs et des autorisations</p>
+      </header>
 
-        <div className="p-6">
-          {/* Introduction */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-800">Introduction</h2>
-            <p className="text-gray-700 mt-2">
-              Cette API permet de gérer les paiements de manière rapide, sécurisée et facile à intégrer dans vos applications.
-            </p>
-          </section>
+      <div className="p-6">
+        
+        {/* Introduction */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Introduction</h2>
+          <p className="text-gray-700 mt-2">
+            Ce service permet de gérer les utilisateurs, les rôles et les permissions de manière centralisée. 
+            Il assure une authentification robuste et une gestion dynamique des accès.
+          </p>
+        </section>
+
+        {/* Objectifs */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Objectifs</h2>
+          <ul className="list-disc ml-6 text-gray-700 mt-2">
+            <li>Créer, gérer et supprimer des utilisateurs</li>
+            <li>Assigner des rôles et gérer leurs permissions</li>
+            <li>Offrir une API sécurisée pour la validation des accès</li>
+            <li>S'intégrer facilement avec Keycloak ou d'autres IAM</li>
+          </ul>
+        </section>
+
+        {/* Architecture du Système */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Architecture du Système</h2>
+          <p className="text-gray-700 mt-2">
+            L'application est basée sur une architecture **microservices**, communiquant via une API Gateway.
+          </p>
+          <div className="mt-6 text-center flex flex-row justify-center">
+            <Image src="/img/architecture.png" width={700} height={400} alt="Architecture du système" />
+          </div>
+        </section>
+
+        {/* Installation et Déploiement */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Installation et Déploiement</h2>
+          <p className="text-gray-700 mt-2"><b>Prérequis :</b> Node.js, Docker, Keycloak</p>
+          <pre className="bg-gray-200 p-4 rounded-md mt-2">
+            {`git clone https://github.com/user-service.git
+cd user-service
+npm install
+npm run dev`}
+          </pre>
+        </section>
+
+        {/* API Endpoints */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Endpoints de l'API</h2>
 
           {/* Authentification */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-800">Authentification</h2>
-            <p className="text-gray-700 mt-2">
-              Toutes les requêtes nécessitent une clé API (<code>api_key</code>) incluse dans l&apos;URL. Assurez-vous de protéger
-              votre clé API pour éviter tout usage non autorisé.
-            </p>
-          </section>
+          <div className="mt-6 bg-gray-100 p-4 rounded-lg">
+            <h3 className="text-lg font-semibold">🔐 Authentification</h3>
+            <p className="text-gray-700">Permet aux utilisateurs de se connecter et d'obtenir un token JWT.</p>
+            <pre className="bg-gray-200 p-4 rounded-md mt-2">
+              {`POST /auth/login
+{
+"email": "user@example.com",
+"password": "password123"
+}`}
+            </pre>
+          </div>
 
-          {/* Routes */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-800">Routes</h2>
+          {/* Gestion des utilisateurs */}
+          <div className="mt-6 bg-gray-100 p-4 rounded-lg">
+            <h3 className="text-lg font-semibold">👤 Gestion des utilisateurs</h3>
+            <p className="text-gray-700">Créer et gérer des utilisateurs.</p>
+            <pre className="bg-gray-200 p-4 rounded-md mt-2">
+              {`GET /users/{id}
+{
+"id": 1,
+"name": "John Doe",
+"email": "john@example.com",
+"role": "admin"
+}`}
+            </pre>
+          </div>
+        </section>
 
-            {/* Demander un paiement */}
-            <section className="mb-10">
-              <h3 className="text-xl font-bold text-gray-800">1. Demander un paiement</h3>
-              <p className="text-gray-700 mt-2">
-                Cette route permet de créer une nouvelle demande de paiement.
-              </p>
-              <p className="text-gray-700">
-                <strong>Méthode :</strong> POST
-              </p>
-              <p className="text-gray-700">
-                <strong>URL :</strong>{" "}
-                <code>https://gateway.yowyob.com/payment-service/{`{api_key}`}/payin</code>
-              </p>
-              <p className="text-gray-700 mt-2">
-                <strong>Headers requis :</strong>{" "}
-                <code>Content-Type: application/json</code>
-              </p>
+        {/* Sécurité et Authentification */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Sécurité et Authentification</h2>
+          <p className="text-gray-700 mt-2">
+            Ce service utilise **JWT (JSON Web Tokens)** et s'intègre avec Keycloak pour la gestion des identités.
+          </p>
+        </section>
 
-              {/* Diagramme de séquence */}
-              <div className="mt-6 ">
-                <h4 className="text-lg font-semibold text-gray-800 ">Diagramme de Séquence</h4>
-                <div className="mt-6 text-center flex flex-row justify-center">
-                  <Image src="/img/yowyob_pay_seq.png" width={700} height={400} alt="Description de l'image" />
-                </div>
-              </div>
+        {/* Tests et Monitoring */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Tests et Monitoring</h2>
+          <ul className="list-disc ml-6 text-gray-700 mt-2">
+            <li>Tests unitaires avec Jest</li>
+            <li>CI/CD avec GitHub Actions</li>
+            <li>Monitoring avec Prometheus et Grafana</li>
+          </ul>
+        </section>
 
-              {/* JSON et exemple */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                {/* Objet JSON pour la requête */}
-                <div className="bg-gray-100 p-4 rounded-lg shadow">
-                  <h4 className="text-lg font-semibold mb-2">Objet JSON</h4>
-                  <pre className="p-4 rounded-lg overflow-x-auto text-sm bg-gray-50">
-                    {JSON.stringify(requestData, null, 2)}
-                  </pre>
-                  <Copy
-                    className="w-6 h-6 text-blue-600 cursor-pointer mt-2"
-                    onClick={() => copyToClipboard(JSON.stringify(requestData, null, 2))}
-                  />
-                </div>
+        {/* Codes de statut HTTP */}
+        <section className="mb-8">
+          <h2 className="text-2xl font-semibold text-gray-800">Codes de statut HTTP</h2>
+          <ul className="list-disc ml-6 text-gray-700">
+            <li>200 : Succès</li>
+            <li>400 : Erreur de requête</li>
+            <li>401 : Non autorisé</li>
+            <li>403 : Accès interdit</li>
+            <li>500 : Erreur serveur</li>
+          </ul>
+        </section>
 
-                {/* Exemple de réponse */}
-                <div className="bg-gray-900 text-white p-4 rounded-lg shadow">
-                  <h4 className="text-lg font-semibold mb-2">Exemple de réponse</h4>
-                  <pre className="overflow-x-auto text-sm">
-                    {JSON.stringify(exampleResponse, null, 2)}
-                  </pre>
-                  <Copy
-                    className="w-6 h-6 text-gray-300 cursor-pointer mt-2"
-                    onClick={() => copyToClipboard(JSON.stringify(exampleResponse, null, 2))}
-                  />
-                </div>
-              </div>
-            </section>
-
-            {/* Vérifier le statut d'un paiement */}
-            <section className="mb-10">
-              <h3 className="text-xl font-bold text-gray-800">2. Vérifier le statut du paiement</h3>
-              <p className="text-gray-700 mt-2">
-                Cette route permet de vérifier le statut d une transaction existante.
-              </p>
-              <p className="text-gray-700">
-                <strong>Méthode :</strong> GET
-              </p>
-              <p className="text-gray-700">
-                <strong>URL :</strong>{" "}
-                <code>
-                  https://gateway.yowyob.com/payment-service/{`{api_key}`}/transactions/{`{transaction_code}`}/status
-                </code>
-              </p>
-              <p className="text-gray-700 mt-2">
-                <strong>Headers requis :</strong>{" "}
-                <code>Authorization: Bearer {`{api_key}`}</code>
-              </p>
-
-
-              {/* JSON et exemple */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-                {/* Objet JSON pour la requête */}
-                <div className="bg-gray-100 p-4 rounded-lg shadow">
-                  <h4 className="text-lg font-semibold mb-2">Objet JSON</h4>
-                  <pre className="p-4 rounded-lg overflow-x-auto text-sm bg-gray-50">
-                    {JSON.stringify(requestDataStatus, null, 2)}
-                  </pre>
-                  <Copy
-                    className="w-6 h-6 text-blue-600 cursor-pointer mt-2"
-                    onClick={() => copyToClipboard(JSON.stringify(requestDataStatus, null, 2))}
-                  />
-                </div>
-
-                {/* Exemple de réponse */}
-                <div className="bg-gray-900 text-white p-4 rounded-lg shadow">
-                  <h4 className="text-lg font-semibold mb-2">Exemple de réponse</h4>
-                  <pre className="overflow-x-auto text-sm">
-                    {JSON.stringify(exampleResponseStatus, null, 2)}
-                  </pre>
-                  <Copy
-                    className="w-6 h-6 text-gray-300 cursor-pointer mt-2"
-                    onClick={() => copyToClipboard(JSON.stringify(exampleResponseStatus, null, 2))}
-                  />
-                </div>
-              </div>
-            </section>
-          </section>
-
-          {/* Codes de statut HTTP */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-800">Codes de statut HTTP</h2>
-            <ul className="list-disc ml-6 text-gray-700">
-              <li>200 : Requête traitée avec succès</li>
-              <li>400 : Erreur dans les paramètres envoyés</li>
-              <li>401 : Clé API invalide ou manquante</li>
-              <li>404 : Transaction introuvable</li>
-              <li>500 : Erreur interne du serveur</li>
-            </ul>
-          </section>
-
-          {/* Support */}
-          <section>
-            <h2 className="text-2xl font-semibold text-gray-800">Support</h2>
-            <p className="text-gray-700 mt-2">
-              Pour toute assistance, contactez notre équipe technique à :{" "}
-              <a
-                href="mailto:support@example.com"
-                className="text-blue-600 underline"
-              >
-                info@yowyob.com
-              </a>
-            </p>
-          </section>
-        </div>
+        {/* Support */}
+        <section>
+          <h2 className="text-2xl font-semibold text-gray-800">Support</h2>
+          <p className="text-gray-700 mt-2">
+            Contactez notre équipe technique à :{" "}
+            <a href="mailto:support@example.com" className="text-blue-600 underline">
+              mandarahades@gmail.com
+            </a>
+          </p>
+        </section>
       </div>
     </div>
+  </div>
   );
 };
 
